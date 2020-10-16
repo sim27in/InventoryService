@@ -51,9 +51,9 @@ public class InventoryController
         return new ResponseEntity<InventoryEntity>(entity, new HttpHeaders(), HttpStatus.OK);
     }
     
-	@PutMapping("/inventory/{id}")
-	public ResponseEntity<InventoryEntity> updateEmployee(@RequestBody Inventory inventory, @PathVariable long id) 
-			 										throws RecordNotFoundException{
+    @PutMapping("/inventory/{id}")
+    public ResponseEntity<InventoryEntity> updateEmployee(@RequestBody Inventory inventory, @PathVariable("id") Long id) 
+			 				throws RecordNotFoundException{
 
 		InventoryEntity entity = inventoryService.updateInventory(id);
 
